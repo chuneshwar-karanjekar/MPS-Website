@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
+
 *{
   margin: 0;
   padding: 0;
@@ -15,23 +16,81 @@ h1{
 /*  font-family: "Poppins", sans-serif; */
 /* font-family: "Playfair Display", serif; */ 
 
+.addmission-text {
+  font-weight: bold;
+  font-family: "Playfair Display", serif;
+}
+.accordion-button span{
+  font-size: large;
+}
 
 /* Navbar css */
-.navbar{
+.navbar {
   font-family: "Poppins", sans-serif;
   font-size: 17px;
   line-height: 26px;
-  
 }
-.dropdown-menu .dropdown-item{
+.navbar-brand {
+  font-weight: bolder;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Custom CSS for nested dropdowns */
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: -7px;
+}
+
+.dropdown-submenu-left {
+  right: 100%;
+  left: auto;
+}
+
+/* Show submenu only on hover */
+.nav-item.dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+.dropdown-item.dropdown-toggle:hover + .dropdown-menu,
+.dropdown-item.dropdown-toggle:focus + .dropdown-menu {
+  display: block;
+}
+
+.dropdown-item.dropdown-toggle:hover,
+.dropdown-item.dropdown-toggle:focus {
+  background-color: #f8f9fa;
+}
+
+/* Ensure the parent dropdown stays open when hovering over submenu */
+.dropdown-submenu:hover > .dropdown-menu {
+  display: block;
+}
+
+/* Add necessary styles for dropdown items */
+.dropdown-menu .dropdown-item {
   background: #fff;
   color: black;
-
 }
-.dropdown-menu .dropdown-item:hover{
-  color:#fff;
+
+.dropdown-menu .dropdown-item:hover {
+  color: #fff;
   background: blue;
 }
+
+@media (max-width: 768px) {
+  .dropdown-menu .dropdown-submenu .dropdown-menu {
+    left: auto;
+    right: 0;
+    top: 100%;
+  }
+}
+
 
 /* Image slider start */
 .each-slide-effect {
@@ -47,12 +106,113 @@ h1{
 }
 
 .each-slide-effect span {
-  padding: 20px;
+  padding: 10px;
   font-size: 20px;
   text-align: center;
   font-size: 100px;
   font-weight: bold;
+  color: #5033f4;
+
 }
+/* School Information CSS Start*/
+.heading-text {
+  color: #064727;
+  font-size: 50px;
+  line-height: 40px;
+  /* font-family: "Poppins", sans-serif; */
+ font-weight: bold;
+ 
+}
+
+.heading-border {
+  background-color: #ffc600;
+  display: inline-block;
+  height: 5px;
+  margin-bottom: 0;
+  margin-top: 0;
+  position: relative;
+  width: 200px;
+}
+.btn{
+  font-size: 25px;
+  border-radius: 5px;
+}
+
+/* School Information CSS END */
+
+/* CONTACT US  */
+/* ContactUs.css */
+
+/* Base styles */
+.banner {
+  padding: 50px 0;
+}
+
+.banner-title {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.connector {
+  width: 100%;
+  height: 2px;
+  background-color: #6f42c1;
+  margin-bottom: 20px;
+}
+
+.bannerImg {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.bannerImg img {
+  max-width: 100%;
+  height: auto;
+}
+
+.banner-content-wrapper {
+  margin-top: 30px;
+}
+
+.banner-content-card {
+  background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.banner-content-card h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.banner-content-card p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.banner-content-card strong {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.banner-rhs {
+  flex-basis: 60%;
+}
+
+  /* Mobile styles */
+  @media (max-width: 768px) {
+    .banner-title {
+      font-size: 30px;
+    }
+    .banner-rhs {
+      flex-basis: 50%;
+    }
+  }
+
+/* CONTACT US END */
 
 /* Card Gallary start */
 
@@ -139,62 +299,146 @@ h1{
 
 /* Quotes CSS END */
 
-/* Our Achivments part Start */
-.our-achievements {
-  text-align: center;
-}
-.our-achievements p {
-  text-align: center;
-  font-size: 30px;
+/* Staff && Studend gallary start */
+.staff-gallery-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.achievement-card {
-  position: relative;
-  margin: 0 10px;
+.staff-image {
+  /* padding: 60px; */
+  /* margin: 30px; */
+  width: 100%; /* Adjust the width as needed */
+  height: 100%; /* Adjust the height as needed */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.achievement-card img {
+.staff-image img {
   width: 100%;
+  height: 100%;
+  padding: 70px;
+  object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
+  object-position: center; /* Centers the image */
+}
+
+
+/* Studend gallary start */
+.polaroid-gallery {
+  padding: 10px 0;
+}
+
+
+.gallery-subtitle {
+  font-size: 20px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.polaroid-cardsBox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.polaroid-card {
+  background: white;
+  padding: 0px;
+  margin: 10px;
+  width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.polaroid-card:hover {
+  transform: scale(1.05);
+}
+
+.polaroid-image img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
   border-radius: 5px;
 }
 
-.achievement-card .overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 20px;
+.polaroid-caption {
+  font-size: 16px;
+  color: #555;
+  margin-top: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .polaroid-card {
+    width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .polaroid-card {
+    width: 90%;
+  }
+}
+
+
+/* Our Achivments part Start */
+
+.achievements {
+  padding: 50px 0;
+}
+
+.achievements-title {
+  font-size: 40px;
+  color: #6f42c1; /* Purple color */
+}
+
+.achievements-counter-title {
+  font-size: 25px;
+  color: #000; /* Black color */
+}
+
+.achievements-cardsBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.achievements-card {
+  width: calc(25% - 20px); /* Adjust width to fit 4 cards in a row */
+  margin: 10px;
+  padding: 15px;
+  border: 1px solid #ddd;
   border-radius: 5px;
-  opacity: 0;
-  transition: opacity 0.3s;
 }
 
-.achievement-card:hover .overlay {
-  opacity: 1;
-}
-
-.achievement-card h3,
-.achievement-card p {
-  color: #fff;
-  margin-bottom: 10px;
-}
-
-.achievement-card button {
-  padding: 10px 20px;
-  background-color: #fff;
-  color: #000;
-  border: none;
+.achievements-card img {
+  width: 100%;
+  height: 300px;
   border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
 }
 
-.achievement-card button:hover {
-  background-color: #f0f0f0;
+.achievement-image {
+  position: relative;
+}
+
+.achievements-card-body {
+  padding: 10px;
+}
+
+.achievements-card-text {
+  font-size: 18px;
+  color: #333; /* Dark gray color */
+
 }
 
 /* Our Achivments Parts End */
+
+
 
 
 /* Footer parts start */
@@ -283,3 +527,17 @@ h1{
 }
 
 /* Footer parts End */
+
+
+
+@media only screen and (max-width: 767px) {
+  .staff-gallery-card {
+    width: calc(100% - 30px); /* Adjust width to fit 2 cards in a row */
+  }
+  .achievements-card {
+    width: calc(50% - 20px); /* Adjust width to fit 2 cards per row on mobile */
+  }
+}
+
+
+
